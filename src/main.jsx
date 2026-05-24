@@ -218,7 +218,50 @@ function App() {
           </p>
         </div>
       </section>
+<section className="workers section" id="workers">
+  <div className="sectionHeading">
+    <span className="eyebrow">For site teams</span>
 
+    <h2>
+      Built for the people actually running the job.
+    </h2>
+
+    <p>
+      GroundUpp is designed for foremen, supervisors,
+      groundworkers and subcontractors who need fast,
+      practical tools on-site.
+    </p>
+  </div>
+
+  <div className="featureGrid">
+    <article className="featureCard">
+      <h3>Mobile-first workflow</h3>
+
+      <p>
+        Clock-ins, updates, materials and reporting
+        work directly from mobile devices on-site.
+      </p>
+    </article>
+
+    <article className="featureCard">
+      <h3>Reduce paperwork</h3>
+
+      <p>
+        Replace spreadsheets, WhatsApp chaos and
+        handwritten site notes with one system.
+      </p>
+    </article>
+
+    <article className="featureCard">
+      <h3>Built for UK construction</h3>
+
+      <p>
+        Designed specifically around UK groundworks,
+        civils and construction team workflows.
+      </p>
+    </article>
+  </div>
+</section>
       <section id="waitlist" className="section waitlist">
         <div className="waitCard">
           <p className="eyebrow amber">
