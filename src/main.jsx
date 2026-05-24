@@ -336,6 +336,34 @@ function App() {
     </article>
   </div>
 </section>
+      <footer className="footer">
+  <div className="footerContent">
+    
+    <div>
+      <h3>GroundUpp</h3>
+
+      <p>
+        AI-powered construction management software built for UK site teams,
+        groundworkers and subcontractors.
+      </p>
+    </div>
+
+    <div className="footerLinks">
+      <a href="#platform">Platform</a>
+      <a href="#workers">For site teams</a>
+      <a href="#waitlist">Waitlist</a>
+    </div>
+
+    <div>
+      <p>Built in the UK for construction teams.</p>
+
+      <p>
+        © 2026 GroundUpp. All rights reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
     </main>
   );
 }
