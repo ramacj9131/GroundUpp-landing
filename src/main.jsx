@@ -257,6 +257,42 @@ function App() {
 
         <p>© {new Date().getFullYear()} GroundUpp. Built for UK construction teams.</p>
       </footer>
+   <section className="features section" id="platform">
+  <div className="sectionHeading">
+    <span className="eyebrow">Platform</span>
+    <h2>Everything site teams need in one place.</h2>
+    <p>
+      GroundUpp combines labour tracking, scheduling, materials,
+      compliance and communication into a single operating system.
+    </p>
+  </div>
+
+  <div className="featureGrid">
+    <article className="featureCard">
+      <h3>Live site tracking</h3>
+      <p>
+        Monitor workforce activity, delays and progress in real time
+        across every active project.
+      </p>
+    </article>
+
+    <article className="featureCard">
+      <h3>AI-powered forecasting</h3>
+      <p>
+        Detect labour overruns, material shortages and scheduling risks
+        before they impact the job.
+      </p>
+    </article>
+
+    <article className="featureCard">
+      <h3>Simple workforce management</h3>
+      <p>
+        Manage subcontractors, timesheets and crews without bloated
+        enterprise software.
+      </p>
+    </article>
+  </div>
+</section>
     </main>
   );
 }
