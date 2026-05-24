@@ -288,7 +288,11 @@ function App() {
             </button>
           </form>
 
-          {status && <small className="status">{status}</small>}
+          {status && (
+  <div className={status.includes('wrong') ? 'status error' : 'status success'}>
+    {status}
+  </div>
+)}
         </div>
       </section>
 
