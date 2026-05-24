@@ -1,80 +1,112 @@
-import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
-import { supabase } from './lib/supabase';
-import './styles.css';
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { createClient } from "@supabase/supabase-js";
+import "./styles.css";
+
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 function App() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState('');
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-  async function submitWaitlist(e) {
+  const joinWaitlist = async (e) => {
     e.preventDefault();
 
-    if (!email || !email.includes('@')) {
-      setStatus('Enter a valid email address.');
-      return;
-    }
+    if (!email) return;
+
+    setLoading(true);
+    setMessage("");
 
     const { error } = await supabase
-      .from('waitlist')
+      .from("waitlist")
       .insert([{ email }]);
 
     if (error) {
-      if (error.code === '23505') {
-        setStatus('You are already on the waitlist.');
-      } else {
-        setStatus('Something went wrong. Please try again.');
-      }
-      return;
+      setMessage("Something went wrong.");
+    } else {
+      setMessage("You’re on the waitlist.");
+      setEmail("");
     }
 
-    setStatus('You have joined the GroundUpp waitlist.');
-    setEmail('');
-  }
+    setLoading(false);
+  };
 
   return (
-    <div className="app">
+    <div className="page">
       <section className="hero">
         <div className="overlay"></div>
 
         <div className="hero-content">
-          <div className="badge">
+          <p className="tagline">
             Built for groundwork & construction teams
-          </div>
-
-          <h1>
-            Construction management,
-            rebuilt from the ground up.
-          </h1>
-
-          <p>
-            GroundUpp helps construction teams manage jobs,
-            labour, progress, scheduling and communication —
-            without bloated enterprise software.
           </p>
 
-          <form onSubmit={submitWaitlist} className="waitlist-form">
+          <h1>
+            CONSTRUCTION
+            <br />
+            MANAGEMENT,
+            <br />
+            REBUILT FROM
+            <br />
+            THE GROUND UP.
+          </h1>
+
+          <p className="subtext">
+            GroundUpp helps construction teams manage jobs, labour,
+            progress, scheduling and communication — without bloated
+            enterprise software.
+          </p>
+
+          <form className="waitlist-form" onSubmit={joinWaitlist}>
             <input
               type="email"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
 
-            <button type="submit">
-              Join Waitlist
+            <button type="submit" disabled={loading}>
+              {loading ? "Joining..." : "Join Waitlist"}
             </button>
           </form>
 
-          {status && (
-            <p className="status">
-              {status}
-            </p>
-          )}
+          {message && <p className="message">{message}</p>}
+        </div>
+      </section>
+
+      <section className="features">
+        <div className="feature">
+          <h2>Job Tracking</h2>
+          <p>
+            Track projects, deadlines, crews and progress from one dashboard.
+          </p>
+        </div>
+
+        <div className="feature">
+          <h2>Labour Management</h2>
+          <p>
+            Manage workers, subcontractors and site attendance in real time.
+          </p>
+        </div>
+
+        <div className="feature">
+          <h2>Built For Site Teams</h2>
+          <p>
+            Simple, fast and practical software designed around real groundwork operations.
+          </p>
         </div>
       </section>
     </div>
   );
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
