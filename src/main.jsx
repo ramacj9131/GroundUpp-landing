@@ -256,8 +256,8 @@ fast, practical operational tools on-site.
       <h3>Built for UK construction</h3>
 
       <p>
-        Designed specifically around UK groundworks,
-        civils and construction team workflows.
+       Designed specifically for UK construction teams,
+subcontractors and field operations.
       </p>
     </article>
   </div>
