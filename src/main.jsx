@@ -347,8 +347,8 @@ subcontractors and field operations.
       <h3>GroundUpp</h3>
 
       <p>
-        AI-powered construction management software built for UK site teams,
-        groundworkers and subcontractors.
+        AI-powered construction management software built for UK construction teams,
+subcontractors and field operations.
       </p>
     </div>
 
