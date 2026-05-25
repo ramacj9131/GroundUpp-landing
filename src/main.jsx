@@ -227,9 +227,9 @@ function App() {
     </h2>
 
     <p>
-      GroundUpp is designed for foremen, supervisors,
-      groundworkers and subcontractors who need fast,
-      practical tools on-site.
+      GroundUpp is designed for site teams, supervisors,
+subcontractors and construction businesses that need
+fast, practical operational tools on-site.
     </p>
   </div>
 
